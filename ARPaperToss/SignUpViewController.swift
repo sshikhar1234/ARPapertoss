@@ -44,12 +44,12 @@ class SignUpViewController: UIViewController,GIDSignInUIDelegate
     
     override func viewDidLoad() {
         
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_main.png")!)
-       googleButton = GIDSignInButton()
-        googleButton.frame = CGRect(x:(view.frame.width/2)-30, y:496+16,  width: 100,height: 50)
-        view.addSubview(googleButton)
-        GIDSignIn.sharedInstance()?.uiDelegate = self
+    super.viewDidLoad()
+    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_main.png")!)
+    googleButton = GIDSignInButton()
+    googleButton.frame = CGRect(x:(view.frame.width/2)-30, y:496+16,  width: 100,height: 50)
+    view.addSubview(googleButton)
+    GIDSignIn.sharedInstance()?.uiDelegate = self
         
         var handle = Auth.auth().addStateDidChangeListener { (auth, user) in
           // ...

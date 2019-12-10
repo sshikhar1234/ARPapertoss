@@ -30,6 +30,8 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     
     
     private var gamePlaying = false
+    private var planeDetected = false
+
     
     @IBOutlet var sceneView: ARSCNView!
     let sceneManager = ARSceneManger()
@@ -283,7 +285,7 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
         
         // Create paper material
         let material = SCNMaterial()
-        material.diffuse.contents = UIColor.white
+        material.diffuse.contents = UIImage(named: "paperball.png")
         material.lightingModel = .physicallyBased
         
         // Create paper geometry
@@ -354,9 +356,16 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
             }
             // Create a plane node for the anchor
             let plane = PlaneNode(anchor: planeAnchor)
-            planeNodes[planeAnchor] = plane
-            node.addChildNode(plane)
-
+             planeNodes[planeAnchor] = plane
+                  if(!planeDetected)        {
+                      node.addChildNode(plane)
+                    planeDetected = true
+                  }
+            else  {
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didReceiveTapGesture))
+            self.sceneView.removeGestureRecognizer(tapGestureRecognizer)
+                    
+            }
             
 
             // Update the configuration progress if detecting planes.
