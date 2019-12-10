@@ -20,10 +20,14 @@ enum RConfigurationProgress {
 
 
 class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSessionDelegate,ARSCNViewDelegate{
+    
+    
     @IBOutlet weak var labelLocalBestScore: UILabel!
-    @IBOutlet weak var labelGlobalHighscore: UILabel!
+    @IBOutlet weak var labelLives: UILabel!
     @IBOutlet weak var labelCurrentScore: UILabel!
     
+    
+    private var gamePlaying = false
     
     @IBOutlet var sceneView: ARSCNView!
     let sceneManager = ARSceneManger()
@@ -33,6 +37,7 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     private var planeNodes = [ARPlaneAnchor: PlaneNode]()
     private var trashcanNode: SCNNode?
     private var score: Int = 0
+    private var lives = 3
 //    private var highscore: Int = 0
     private var fetchedHighscore: Int = 0
     let scene = SCNScene()
@@ -44,12 +49,9 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        sceneManager.attach(to: sceneView)
-//        sceneView.scene.physicsWorld.contactDelegate = self
-//        sceneManager.displayDegubInfo()
+        gamePlaying = true
         setupGestureRecognizers()
         setupScoreStats()
-        self.labelCurrentScore.text = "Start Game!"
     }
 
     
@@ -83,6 +85,7 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     if(fetchedHighscore>0){
         self.labelLocalBestScore.text = "Your BEST: \(fetchedHighscore)"
     }
+    self.labelLives.text = "Lives: \(self.lives)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -159,33 +162,33 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     @objc func didReceiveTapGesture(_ sender: UITapGestureRecognizer) {
           //Called when the user taps on screen
         print("Tap received")
-        //Put the trash can
-//        guard configurationProgress == .placingObjects else {
-//            print("Guard 0 Error")
-//return }
+        if(gamePlaying)
+        {
+            guard let position = getPositionInWorld(from: sender) else {
+                      print("Guard 1 Error")
+                      return
+                  }
+                  
+                  // Add trashcan node to the selected position.
+                  trashcanNode?.removeFromParentNode()
+                  guard let trashcanNode = SCNScene(named: "art.scnassets/trashcan.scn")?.rootNode else {
+                    print("Guard 2 Error")
+                      return
+                  }
+                  trashcanNode.position = position
+                  sceneView.scene.rootNode.addChildNode(trashcanNode)
+                  self.trashcanNode = trashcanNode
+            
+            enterCompletedPhase()
+        }
               
-              // Get the world position of the recognizer
-              guard let position = getPositionInWorld(from: sender) else {
-                  print("Guard 1 Error")
-                  return
-              }
-              
-              // Add trashcan node to the selected position.
-              trashcanNode?.removeFromParentNode()
-              guard let trashcanNode = SCNScene(named: "art.scnassets/trashcan.scn")?.rootNode else {
-                print("Guard 2 Error")
-                  return
-              }
-              trashcanNode.position = position
-              sceneView.scene.rootNode.addChildNode(trashcanNode)
-              self.trashcanNode = trashcanNode
-        
-        enterCompletedPhase()
       }
 
     //Working, not finished
    @objc func didReceivePanGesture(_ sender: UIPanGestureRecognizer) {
-           
+    
+    if(gamePlaying)
+          {
            guard configurationProgress == .completed else { return }
            
            // Handle .ended
@@ -219,12 +222,41 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
                
                // Reset score if last ball didn't hit
                if let previousNode = self.paperNode {
+
+                //Decrement life by 1
+                lives = lives - 1
+                 DispatchQueue.main.async {
+                    //Update the UI
+                    self.labelLives.text = "Lives: \(self.lives)"
+                            }
+                if(lives == 0)
+                {
+                    score = 0
+                    
+                    let fadeOutAction = SCNAction.fadeOut(duration: 1)
+                    previousNode.runAction(fadeOutAction, completionHandler: {
+                        previousNode.removeFromParentNode()
+                    })
+                    //Stop the game
+                    gamePlaying = false
+                    //Remove All the nodes
+                    self.labelCurrentScore.text = "Score: \(self.score)"
+                    self.sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+                    node.removeFromParentNode()
+                    }
+                    //Remove both tap and pan gestures
+                    for recognizer in sceneView.gestureRecognizers ?? [] {
+                    sceneView.removeGestureRecognizer(recognizer)
+                       }
+                    //Prompt Game Over dialog
+                    showGameOverDialog()
+                    //Remove the current papernode
+                    paperNode?.removeFromParentNode()
+                    
+                }
                    print("Missed")
-                   score = 0
-                   let fadeOutAction = SCNAction.fadeOut(duration: 1)
-                   previousNode.runAction(fadeOutAction, completionHandler: {
-                       previousNode.removeFromParentNode()
-                   })
+                
+                   
                }
                
                
@@ -242,6 +274,7 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
                    paperNode?.position = result.worldCoordinates
                }
            }
+}
        }
     private func createPaperNode() -> SCNNode {
         
@@ -303,34 +336,38 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     }
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
 
-        print("renderer: didAdd")
-        // Check if the anchor represents a plane
-        guard let planeAnchor = anchor as? ARPlaneAnchor else
+        if(gamePlaying)
         {
-            print("Guard 1")
-            return
-        }
-        // Update the plane node with the anchor
-        if let plane = planeNodes[planeAnchor] {
-            plane.update(anchor: planeAnchor)
-        }
-        // Create a plane node for the anchor
-        let plane = PlaneNode(anchor: planeAnchor)
-        planeNodes[planeAnchor] = plane
-        node.addChildNode(plane)
+            print("renderer: didAdd")
+            // Check if the anchor represents a plane
+            guard let planeAnchor = anchor as? ARPlaneAnchor else
+            {
+                print("Guard 1")
+                return
+            }
+            // Update the plane node with the anchor
+            if let plane = planeNodes[planeAnchor] {
+                plane.update(anchor: planeAnchor)
+            }
+            // Create a plane node for the anchor
+            let plane = PlaneNode(anchor: planeAnchor)
+            planeNodes[planeAnchor] = plane
+            node.addChildNode(plane)
 
-        
+            
 
-        // Update the configuration progress if detecting planes.
-        if configurationProgress == .detectingPlanes {
+            // Update the configuration progress if detecting planes.
+            if configurationProgress == .detectingPlanes {
 
-            DispatchQueue.main.async {
-                // Vibrate to let the user know plane detection is done.
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                DispatchQueue.main.async {
+                    // Vibrate to let the user know plane detection is done.
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
 
-                self.enterObjectPlacementPhase()
+                    self.enterObjectPlacementPhase()
+                }
             }
         }
+        
     }
     private func enterObjectPlacementPhase() {
           
@@ -415,44 +452,10 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
                     self.labelCurrentScore.text = "Current: \(self.score)"
                     
                 }
-                updateScoreNode(score: score)
+               
             }
         }
     }
-    private var scoreNode: SCNNode?
-       
-       func updateScoreNode(score: Int) {
-           print("updateScoreNode")
-           let textMaterial = SCNMaterial()
-           textMaterial.diffuse.contents = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-           
-        print("Score: ")
-        print(score)
-           // Create text geometry
-           let text = SCNText(string: "Score: \(score)", extrusionDepth: 0.01)
-           text.materials = [textMaterial]
-           text.font = UIFont.systemFont(ofSize: 0.1)
-           text.alignmentMode = CATextLayerAlignmentMode.center.rawValue
-        
-           
-           
-           // Create and center text node
-           let textNode = SCNNode(geometry: text)
-           centerPivot(for: textNode)
-           textNode.position.y = 0.5
-           
-           // Constrain to always look at camera
-           let lookAtCameraConstraint = SCNBillboardConstraint()
-           lookAtCameraConstraint.freeAxes = [.Y, .X]
-           textNode.constraints = [lookAtCameraConstraint]
-           
-           // Add to scene by replacing old node
-           scoreNode?.removeAllActions()
-           scoreNode?.removeFromParentNode()
-           scoreNode = textNode
-           trashcanNode?.addChildNode(textNode)
-           textNode.runAction(SCNAction.fadeOut(duration: 2))
-       }
        
        func centerPivot(for node: SCNNode) {
            let (min, max) = node.boundingBox
@@ -486,5 +489,32 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
         navigationController?.popViewController(animated: true)
 
         dismiss(animated: true, completion: nil)
+    }
+    func showGameOverDialog(){
+        let alert = UIAlertController(title: "Game Over!", message: "Oops! Looks like you're out of lives!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+              switch action.style{
+              case .default:
+                
+                self.navigationController?.popViewController(animated: true)
+
+                self.dismiss(animated: true, completion: nil)
+                //Reset the game stats
+//                self.gamePlaying = true
+//                self.score = 0
+//                self.lives = 3
+//                self.labelLives.text = " Lives: \(self.lives)"
+//                self.setUpSceneView()
+//                self.setupGestureRecognizers()
+
+              case .cancel:
+                    print("cancel")
+
+              case .destructive:
+                    print("destructive")
+
+
+        }}))
+        self.present(alert, animated: true, completion: nil)
     }
 }
