@@ -22,7 +22,6 @@ class SignUpViewController: UIViewController,GIDSignInUIDelegate
     @IBOutlet weak var labelWelcome: UILabel!
     @IBOutlet weak var btnLogout: UIButton!
       var googleButton : GIDSignInButton!;
-    
     @IBAction func onLogoutClicked(_ sender: Any) {
                 do{
                 try Auth.auth().signOut()
@@ -46,8 +45,7 @@ class SignUpViewController: UIViewController,GIDSignInUIDelegate
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-       googleButton = GIDSignInButton()
+        googleButton = GIDSignInButton()
         googleButton.frame = CGRect(x:(view.frame.width/2)-30, y:496+16,  width: 100,height: 50)
         view.addSubview(googleButton)
         GIDSignIn.sharedInstance()?.uiDelegate = self
