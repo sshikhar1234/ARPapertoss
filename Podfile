@@ -10,6 +10,7 @@ target 'ARPaperToss' do
 
 # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
+pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn', '<5.0.0'
 pod 'MBProgressHUD', '~> 1.1.0'

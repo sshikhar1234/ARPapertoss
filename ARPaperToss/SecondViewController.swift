@@ -9,6 +9,8 @@
 import UIKit
 import SceneKit
 import ARKit
+import FirebaseDatabase
+import FirebaseAuth
 
 
 enum RConfigurationProgress {
@@ -42,6 +44,7 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     private var fetchedHighscore: Int = 0
     let scene = SCNScene()
 
+    private let STRING_FIREBASE_DB_REF = "https://paperartoss.firebaseio.com/"
     //Tracks the configuration
     var configurationProgress: RConfigurationProgress?
   
@@ -441,7 +444,7 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
                     DispatchQueue.main.async {
                             self.labelLocalBestScore.text = "Highscore: \(self.fetchedHighscore)"
                             self.saveScoretoLocalDb(score: self.fetchedHighscore)
-                        
+                            self.saveScoretoGlobalDb(score: self.fetchedHighscore)
                     }
 
                 }
@@ -450,7 +453,6 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
                 print("Current \(self.score)")
                 DispatchQueue.main.async {
                     self.labelCurrentScore.text = "Current: \(self.score)"
-                    
                 }
                
             }
@@ -466,10 +468,14 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
            )
        }
 
+    //Save Locally
     func saveScoretoLocalDb(score: Int){
         UserDefaults.standard.set(score, forKey: "highscore")
         print("Data Saved")
     }
+    
+    
+    //Get Locally
     func getScoreFromLocalDb()->NSInteger{
          var fetchedScore: NSInteger  = UserDefaults.standard.integer(forKey: "highscore")
         
@@ -485,6 +491,25 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
             return 0
         }
     }
+    
+    
+    //Save Globally
+    func saveScoretoGlobalDb(score: Int){
+        let reference = Database.database().reference(fromURL: STRING_FIREBASE_DB_REF)
+        let email = Auth.auth().currentUser?.email;
+        var username: String  = email!.substring(to: (email?.lastIndex(of: "@"))!)
+        let dictionaryNode = ["email": Auth.auth().currentUser?.email,"highscore":score] as [String : Any]
+
+        reference.updateChildValues([username:dictionaryNode],withCompletionBlock: {(error,ref) in
+            if error != nil{
+                print(error)
+                return
+            }
+            print("Highscore submitted to global leaderboard")
+        })
+       }
+    
+    //Get Globally
     @IBAction func onCloseClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
 

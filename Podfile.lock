@@ -9,6 +9,9 @@ PODS:
     - FirebaseAnalytics (= 6.1.6)
   - Firebase/CoreOnly (6.13.0):
     - FirebaseCore (= 6.4.0)
+  - Firebase/Database (6.13.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 6.1.2)
   - FirebaseAnalytics (6.1.6):
     - FirebaseCore (~> 6.4)
     - FirebaseInstanceID (~> 4.2)
@@ -37,6 +40,10 @@ PODS:
     - GoogleUtilities/Logger (~> 6.2)
     - nanopb (~> 0.3.901)
   - FirebaseCoreDiagnosticsInterop (1.1.0)
+  - FirebaseDatabase (6.1.2):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - leveldb-library (~> 1.22)
   - FirebaseInstanceID (4.2.7):
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
@@ -82,6 +89,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.3.2):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.3.0)
+  - leveldb-library (1.22)
   - MBProgressHUD (1.1.0)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
@@ -92,6 +100,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
+  - Firebase/Database
   - GoogleSignIn (< 5.0.0)
   - MBProgressHUD (~> 1.1.0)
 
@@ -104,6 +113,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
+    - FirebaseDatabase
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -112,6 +122,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - leveldb-library
     - MBProgressHUD
     - nanopb
 
@@ -123,6 +134,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 307ea2508df730c5865334e41965bd9ea344b0e5
   FirebaseCoreDiagnostics: 511f4f3ed7d440bb69127e8b97c2bc8befae639e
   FirebaseCoreDiagnosticsInterop: e9b1b023157e3a2fc6418b5cb601e79b9af7b3a0
+  FirebaseDatabase: 963515d232ded06f36f6ce830507c94551866170
   FirebaseInstanceID: ebd2ea79ee38db0cb5f5167b17a0d387e1cc7b6e
   GoogleAppMeasurement: dfe55efa543e899d906309eaaac6ca26d249862f
   GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
@@ -131,9 +143,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 800648f8b3127618c1b59c7f97684427630c5ea3
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
+  leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
 
-PODFILE CHECKSUM: 5c1273bbd72471e1de217505d59f563d9a972f79
+PODFILE CHECKSUM: ed1b73cc77b1e4be879d74d118f6a65ba184b8b0
 
 COCOAPODS: 1.8.4
