@@ -3,19 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27C1B04988E4ABF752141718 /* Pods_ARPaperToss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529578E3B6805E4EC0AD2065 /* Pods_ARPaperToss.framework */; };
 		68202688239EC4E8006EC991 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68202687239EC4E8006EC991 /* AppDelegate.swift */; };
 		6820268A239EC4E8006EC991 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 68202689239EC4E8006EC991 /* art.scnassets */; };
 		6820268C239EC4E8006EC991 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6820268B239EC4E8006EC991 /* ViewController.swift */; };
 		6820268F239EC4E8006EC991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6820268D239EC4E8006EC991 /* Main.storyboard */; };
 		68202691239EC4EB006EC991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68202690239EC4EB006EC991 /* Assets.xcassets */; };
 		68202694239EC4EB006EC991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68202692239EC4EB006EC991 /* LaunchScreen.storyboard */; };
+		6820269C239EC759006EC991 /* ARSetupState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6820269B239EC759006EC991 /* ARSetupState.swift */; };
+		682026A0239ECA6B006EC991 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6820269F239ECA6B006EC991 /* SecondViewController.swift */; };
+		682026A4239ED400006EC991 /* ARSceneManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026A3239ED400006EC991 /* ARSceneManger.swift */; };
+		682026A6239ED7BE006EC991 /* PlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026A5239ED7BE006EC991 /* PlaneNode.swift */; };
+		682026A8239ED85A006EC991 /* ARHitTestResult+PositionInWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026A7239ED85A006EC991 /* ARHitTestResult+PositionInWorld.swift */; };
+		682026AA239ED8A6006EC991 /* CategoryBitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026A9239ED8A6006EC991 /* CategoryBitMask.swift */; };
+		682026AE239EEF9E006EC991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 682026AD239EEF9E006EC991 /* GoogleService-Info.plist */; };
+		682026B2239F4958006EC991 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026B1239F4958006EC991 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		529578E3B6805E4EC0AD2065 /* Pods_ARPaperToss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARPaperToss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68202684239EC4E8006EC991 /* ARPaperToss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARPaperToss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68202687239EC4E8006EC991 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68202689239EC4E8006EC991 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -24,6 +34,16 @@
 		68202690239EC4EB006EC991 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68202693239EC4EB006EC991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68202695239EC4EB006EC991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6820269B239EC759006EC991 /* ARSetupState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSetupState.swift; sourceTree = "<group>"; };
+		6820269F239ECA6B006EC991 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		682026A3239ED400006EC991 /* ARSceneManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSceneManger.swift; sourceTree = "<group>"; };
+		682026A5239ED7BE006EC991 /* PlaneNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneNode.swift; sourceTree = "<group>"; };
+		682026A7239ED85A006EC991 /* ARHitTestResult+PositionInWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARHitTestResult+PositionInWorld.swift"; sourceTree = "<group>"; };
+		682026A9239ED8A6006EC991 /* CategoryBitMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryBitMask.swift; sourceTree = "<group>"; };
+		682026AD239EEF9E006EC991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		682026B1239F4958006EC991 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E596EF0BC236886B2AF3C811 /* Pods-ARPaperToss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPaperToss.release.xcconfig"; path = "Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss.release.xcconfig"; sourceTree = "<group>"; };
+		F44F81F97ED5156459CA7D84 /* Pods-ARPaperToss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPaperToss.debug.xcconfig"; path = "Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27C1B04988E4ABF752141718 /* Pods_ARPaperToss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +63,8 @@
 			children = (
 				68202686239EC4E8006EC991 /* ARPaperToss */,
 				68202685239EC4E8006EC991 /* Products */,
+				AF464F26ED267D6C6E0D5849 /* Pods */,
+				98F04535F2415C369CA6FF88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +79,11 @@
 		68202686239EC4E8006EC991 /* ARPaperToss */ = {
 			isa = PBXGroup;
 			children = (
+				682026A9239ED8A6006EC991 /* CategoryBitMask.swift */,
+				682026A7239ED85A006EC991 /* ARHitTestResult+PositionInWorld.swift */,
+				682026A5239ED7BE006EC991 /* PlaneNode.swift */,
+				682026A3239ED400006EC991 /* ARSceneManger.swift */,
+				6820269B239EC759006EC991 /* ARSetupState.swift */,
 				68202687239EC4E8006EC991 /* AppDelegate.swift */,
 				68202689239EC4E8006EC991 /* art.scnassets */,
 				6820268B239EC4E8006EC991 /* ViewController.swift */,
@@ -63,8 +91,28 @@
 				68202690239EC4EB006EC991 /* Assets.xcassets */,
 				68202692239EC4EB006EC991 /* LaunchScreen.storyboard */,
 				68202695239EC4EB006EC991 /* Info.plist */,
+				6820269F239ECA6B006EC991 /* SecondViewController.swift */,
+				682026AD239EEF9E006EC991 /* GoogleService-Info.plist */,
+				682026B1239F4958006EC991 /* SignUpViewController.swift */,
 			);
 			path = ARPaperToss;
+			sourceTree = "<group>";
+		};
+		98F04535F2415C369CA6FF88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				529578E3B6805E4EC0AD2065 /* Pods_ARPaperToss.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF464F26ED267D6C6E0D5849 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F44F81F97ED5156459CA7D84 /* Pods-ARPaperToss.debug.xcconfig */,
+				E596EF0BC236886B2AF3C811 /* Pods-ARPaperToss.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68202698239EC4EB006EC991 /* Build configuration list for PBXNativeTarget "ARPaperToss" */;
 			buildPhases = (
+				9706075B98872109049B3485 /* [CP] Check Pods Manifest.lock */,
 				68202680239EC4E8006EC991 /* Sources */,
 				68202681239EC4E8006EC991 /* Frameworks */,
 				68202682239EC4E8006EC991 /* Resources */,
+				09259EEB850CD46C240416BB /* [CP] Embed Pods Frameworks */,
+				A0B97DAD6BE862356B780A72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,6 +178,7 @@
 			files = (
 				6820268A239EC4E8006EC991 /* art.scnassets in Resources */,
 				68202694239EC4EB006EC991 /* LaunchScreen.storyboard in Resources */,
+				682026AE239EEF9E006EC991 /* GoogleService-Info.plist in Resources */,
 				68202691239EC4EB006EC991 /* Assets.xcassets in Resources */,
 				6820268F239EC4E8006EC991 /* Main.storyboard in Resources */,
 			);
@@ -134,13 +186,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09259EEB850CD46C240416BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9706075B98872109049B3485 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARPaperToss-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0B97DAD6BE862356B780A72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		68202680239EC4E8006EC991 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682026A6239ED7BE006EC991 /* PlaneNode.swift in Sources */,
+				682026A0239ECA6B006EC991 /* SecondViewController.swift in Sources */,
 				6820268C239EC4E8006EC991 /* ViewController.swift in Sources */,
+				6820269C239EC759006EC991 /* ARSetupState.swift in Sources */,
 				68202688239EC4E8006EC991 /* AppDelegate.swift in Sources */,
+				682026A8239ED85A006EC991 /* ARHitTestResult+PositionInWorld.swift in Sources */,
+				682026B2239F4958006EC991 /* SignUpViewController.swift in Sources */,
+				682026A4239ED400006EC991 /* ARSceneManger.swift in Sources */,
+				682026AA239ED8A6006EC991 /* CategoryBitMask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +400,7 @@
 		};
 		68202699239EC4EB006EC991 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F44F81F97ED5156459CA7D84 /* Pods-ARPaperToss.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,7 +410,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.lambtoncollege.mad3115.sdsasadsa.ARPaperToss;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.lambtoncollege.mad3115.sdsasadsa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,6 +419,7 @@
 		};
 		6820269A239EC4EB006EC991 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E596EF0BC236886B2AF3C811 /* Pods-ARPaperToss.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,7 +429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.lambtoncollege.mad3115.sdsasadsa.ARPaperToss;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.lambtoncollege.mad3115.sdsasadsa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
