@@ -482,4 +482,9 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
             return 0
         }
     }
+    @IBAction func onCloseClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+
+        dismiss(animated: true, completion: nil)
+    }
 }
