@@ -23,7 +23,7 @@ class LeaderboardViewController : UIViewController,UITableViewDataSource,UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableCell(style: .default, reuseIdentifier: "reusable")
-        let score = scores[indexPath.row] 
+        let score = scores[indexPath.row]
         var stringData = "\(score) by \(names[indexPath.row])"
         cell.textLabel?.font = UIFont(name: "BlueberryRegular", size: 18.0)
         cell.textLabel?.text = stringData
@@ -49,8 +49,6 @@ class LeaderboardViewController : UIViewController,UITableViewDataSource,UITable
     func fetchGlobalLeaderboard(){
           print("fetchLeaderboardData")
           let ref = Database.database().reference()
-        
-     
         
         ref.observe(.childAdded, with: {(snapshot) in
           print(snapshot.value!)

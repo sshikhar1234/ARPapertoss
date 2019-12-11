@@ -10,11 +10,9 @@
 		27C1B04988E4ABF752141718 /* Pods_ARPaperToss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529578E3B6805E4EC0AD2065 /* Pods_ARPaperToss.framework */; };
 		68202688239EC4E8006EC991 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68202687239EC4E8006EC991 /* AppDelegate.swift */; };
 		6820268A239EC4E8006EC991 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 68202689239EC4E8006EC991 /* art.scnassets */; };
-		6820268C239EC4E8006EC991 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6820268B239EC4E8006EC991 /* ViewController.swift */; };
 		6820268F239EC4E8006EC991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6820268D239EC4E8006EC991 /* Main.storyboard */; };
 		68202691239EC4EB006EC991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68202690239EC4EB006EC991 /* Assets.xcassets */; };
 		68202694239EC4EB006EC991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68202692239EC4EB006EC991 /* LaunchScreen.storyboard */; };
-		6820269C239EC759006EC991 /* ARSetupState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6820269B239EC759006EC991 /* ARSetupState.swift */; };
 		682026A0239ECA6B006EC991 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6820269F239ECA6B006EC991 /* SecondViewController.swift */; };
 		682026A4239ED400006EC991 /* ARSceneManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026A3239ED400006EC991 /* ARSceneManger.swift */; };
 		682026A6239ED7BE006EC991 /* PlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026A5239ED7BE006EC991 /* PlaneNode.swift */; };
@@ -26,11 +24,9 @@
 		682026BB239F6DCC006EC991 /* PokemonSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 682026BA239F6DCC006EC991 /* PokemonSolid.ttf */; };
 		682026BD239F6DDB006EC991 /* SuperMario256.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 682026BC239F6DDB006EC991 /* SuperMario256.ttf */; };
 		682026C323A00BB4006EC991 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026C223A00BB4006EC991 /* LeaderboardViewController.swift */; };
-		682026C523A00D41006EC991 /* bg_leaderboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 682026C423A00D41006EC991 /* bg_leaderboard.jpg */; };
 		682026C823A01EB6006EC991 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026C723A01EB6006EC991 /* UserProfile.swift */; };
 		682026CB23A0379F006EC991 /* TableviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026CA23A0379E006EC991 /* TableviewController.swift */; };
 		682026CD23A0398D006EC991 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026CC23A0398D006EC991 /* TableCell.swift */; };
-		6862BD6723A071B9002AF2CB /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 6862BD6623A071B9002AF2CB /* cancel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +34,10 @@
 		68202684239EC4E8006EC991 /* ARPaperToss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARPaperToss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68202687239EC4E8006EC991 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68202689239EC4E8006EC991 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		6820268B239EC4E8006EC991 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6820268E239EC4E8006EC991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68202690239EC4EB006EC991 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68202693239EC4EB006EC991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68202695239EC4EB006EC991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6820269B239EC759006EC991 /* ARSetupState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSetupState.swift; sourceTree = "<group>"; };
 		6820269F239ECA6B006EC991 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		682026A3239ED400006EC991 /* ARSceneManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSceneManger.swift; sourceTree = "<group>"; };
 		682026A5239ED7BE006EC991 /* PlaneNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneNode.swift; sourceTree = "<group>"; };
@@ -55,11 +49,9 @@
 		682026BA239F6DCC006EC991 /* PokemonSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonSolid.ttf; sourceTree = "<group>"; };
 		682026BC239F6DDB006EC991 /* SuperMario256.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMario256.ttf; sourceTree = "<group>"; };
 		682026C223A00BB4006EC991 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
-		682026C423A00D41006EC991 /* bg_leaderboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_leaderboard.jpg; sourceTree = "<group>"; };
 		682026C723A01EB6006EC991 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		682026CA23A0379E006EC991 /* TableviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableviewController.swift; sourceTree = "<group>"; };
 		682026CC23A0398D006EC991 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
-		6862BD6623A071B9002AF2CB /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		E596EF0BC236886B2AF3C811 /* Pods-ARPaperToss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPaperToss.release.xcconfig"; path = "Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss.release.xcconfig"; sourceTree = "<group>"; };
 		F44F81F97ED5156459CA7D84 /* Pods-ARPaperToss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPaperToss.debug.xcconfig"; path = "Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,10 +71,6 @@
 		6820267B239EC4E8006EC991 = {
 			isa = PBXGroup;
 			children = (
-				682026CA23A0379E006EC991 /* TableviewController.swift */,
-				682026C723A01EB6006EC991 /* UserProfile.swift */,
-				682026C623A00E75006EC991 /* ViewControllers */,
-				682026B6239F6C85006EC991 /* Fonts */,
 				68202686239EC4E8006EC991 /* ARPaperToss */,
 				68202685239EC4E8006EC991 /* Products */,
 				AF464F26ED267D6C6E0D5849 /* Pods */,
@@ -101,19 +89,13 @@
 		68202686239EC4E8006EC991 /* ARPaperToss */ = {
 			isa = PBXGroup;
 			children = (
-				682026CC23A0398D006EC991 /* TableCell.swift */,
-				682026A9239ED8A6006EC991 /* CategoryBitMask.swift */,
-				682026A7239ED85A006EC991 /* ARHitTestResult+PositionInWorld.swift */,
-				682026A5239ED7BE006EC991 /* PlaneNode.swift */,
-				682026A3239ED400006EC991 /* ARSceneManger.swift */,
-				6820269B239EC759006EC991 /* ARSetupState.swift */,
+				682026C623A00E75006EC991 /* ViewControllers */,
+				682026B6239F6C85006EC991 /* Fonts */,
+				6862BD6823A0830F002AF2CB /* Utils */,
 				68202687239EC4E8006EC991 /* AppDelegate.swift */,
 				68202689239EC4E8006EC991 /* art.scnassets */,
-				6820268B239EC4E8006EC991 /* ViewController.swift */,
 				6820268D239EC4E8006EC991 /* Main.storyboard */,
 				68202690239EC4EB006EC991 /* Assets.xcassets */,
-				6862BD6623A071B9002AF2CB /* cancel.png */,
-				682026C423A00D41006EC991 /* bg_leaderboard.jpg */,
 				68202692239EC4EB006EC991 /* LaunchScreen.storyboard */,
 				68202695239EC4EB006EC991 /* Info.plist */,
 				682026AD239EEF9E006EC991 /* GoogleService-Info.plist */,
@@ -134,11 +116,25 @@
 		682026C623A00E75006EC991 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				682026CA23A0379E006EC991 /* TableviewController.swift */,
 				6820269F239ECA6B006EC991 /* SecondViewController.swift */,
 				682026C223A00BB4006EC991 /* LeaderboardViewController.swift */,
 				682026B1239F4958006EC991 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6862BD6823A0830F002AF2CB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				682026A3239ED400006EC991 /* ARSceneManger.swift */,
+				682026C723A01EB6006EC991 /* UserProfile.swift */,
+				682026CC23A0398D006EC991 /* TableCell.swift */,
+				682026A9239ED8A6006EC991 /* CategoryBitMask.swift */,
+				682026A7239ED85A006EC991 /* ARHitTestResult+PositionInWorld.swift */,
+				682026A5239ED7BE006EC991 /* PlaneNode.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		98F04535F2415C369CA6FF88 /* Frameworks */ = {
@@ -222,12 +218,10 @@
 				6820268A239EC4E8006EC991 /* art.scnassets in Resources */,
 				682026BD239F6DDB006EC991 /* SuperMario256.ttf in Resources */,
 				68202694239EC4EB006EC991 /* LaunchScreen.storyboard in Resources */,
-				6862BD6723A071B9002AF2CB /* cancel.png in Resources */,
 				682026AE239EEF9E006EC991 /* GoogleService-Info.plist in Resources */,
 				68202691239EC4EB006EC991 /* Assets.xcassets in Resources */,
 				682026BB239F6DCC006EC991 /* PokemonSolid.ttf in Resources */,
 				682026B9239F6CBB006EC991 /* BlueberryRegular.otf in Resources */,
-				682026C523A00D41006EC991 /* bg_leaderboard.jpg in Resources */,
 				6820268F239EC4E8006EC991 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,8 +297,6 @@
 				682026C323A00BB4006EC991 /* LeaderboardViewController.swift in Sources */,
 				682026CD23A0398D006EC991 /* TableCell.swift in Sources */,
 				682026CB23A0379F006EC991 /* TableviewController.swift in Sources */,
-				6820268C239EC4E8006EC991 /* ViewController.swift in Sources */,
-				6820269C239EC759006EC991 /* ARSetupState.swift in Sources */,
 				682026C823A01EB6006EC991 /* UserProfile.swift in Sources */,
 				68202688239EC4E8006EC991 /* AppDelegate.swift in Sources */,
 				682026A8239ED85A006EC991 /* ARHitTestResult+PositionInWorld.swift in Sources */,

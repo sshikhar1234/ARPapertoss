@@ -1,9 +1,9 @@
 //
-//  ARHitTestResult+PositionInWorld.swift
-//  Paper Toss AR
+//  AppDelegate.swift
+//  ARPaperToss
 //
-//  Created by Lasse Hammer Priebe on 21/09/2017.
-//  Copyright © 2017 Hundredeni. All rights reserved.
+//  Created by Shikhar Shah on 2019-12-09.
+//  Copyright © 2019 Lambton. All rights reserved.
 //
 
 import Foundation

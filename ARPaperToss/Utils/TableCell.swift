@@ -1,9 +1,9 @@
 //
-//  TableCell.swift
-//  Swift-TableView-Example
+//  AppDelegate.swift
+//  ARPaperToss
 //
-//  Created by Bilal ARSLAN on 11/10/14.
-//  Copyright (c) 2014 Bilal ARSLAN. All rights reserved.
+//  Created by Shikhar Shah on 2019-12-09.
+//  Copyright © 2019 Lambton. All rights reserved.
 //
 
 import Foundation

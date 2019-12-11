@@ -1,9 +1,9 @@
 //
-//  CategoryBitMask.swift
-//  Paper Toss AR
+//  AppDelegate.swift
+//  ARPaperToss
 //
-//  Created by Lasse Hammer Priebe on 22/09/2017.
-//  Copyright © 2017 Hundredeni. All rights reserved.
+//  Created by Shikhar Shah on 2019-12-09.
+//  Copyright © 2019 Lambton. All rights reserved.
 //
 
 import Foundation
@@ -14,4 +14,5 @@ struct CategoryBitMask {
     static let wall     =   0b00000010
     static let paper    =   0b00000100
     static let target   =   0b00001000
+    static let powerup   =  0b00010000
 }
