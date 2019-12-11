@@ -30,6 +30,7 @@
 		682026C823A01EB6006EC991 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026C723A01EB6006EC991 /* UserProfile.swift */; };
 		682026CB23A0379F006EC991 /* TableviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026CA23A0379E006EC991 /* TableviewController.swift */; };
 		682026CD23A0398D006EC991 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682026CC23A0398D006EC991 /* TableCell.swift */; };
+		6862BD6723A071B9002AF2CB /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 6862BD6623A071B9002AF2CB /* cancel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		682026C723A01EB6006EC991 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		682026CA23A0379E006EC991 /* TableviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableviewController.swift; sourceTree = "<group>"; };
 		682026CC23A0398D006EC991 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		6862BD6623A071B9002AF2CB /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		E596EF0BC236886B2AF3C811 /* Pods-ARPaperToss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPaperToss.release.xcconfig"; path = "Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss.release.xcconfig"; sourceTree = "<group>"; };
 		F44F81F97ED5156459CA7D84 /* Pods-ARPaperToss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPaperToss.debug.xcconfig"; path = "Target Support Files/Pods-ARPaperToss/Pods-ARPaperToss.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				6820268B239EC4E8006EC991 /* ViewController.swift */,
 				6820268D239EC4E8006EC991 /* Main.storyboard */,
 				68202690239EC4EB006EC991 /* Assets.xcassets */,
+				6862BD6623A071B9002AF2CB /* cancel.png */,
 				682026C423A00D41006EC991 /* bg_leaderboard.jpg */,
 				68202692239EC4EB006EC991 /* LaunchScreen.storyboard */,
 				68202695239EC4EB006EC991 /* Info.plist */,
@@ -219,6 +222,7 @@
 				6820268A239EC4E8006EC991 /* art.scnassets in Resources */,
 				682026BD239F6DDB006EC991 /* SuperMario256.ttf in Resources */,
 				68202694239EC4EB006EC991 /* LaunchScreen.storyboard in Resources */,
+				6862BD6723A071B9002AF2CB /* cancel.png in Resources */,
 				682026AE239EEF9E006EC991 /* GoogleService-Info.plist in Resources */,
 				68202691239EC4EB006EC991 /* Assets.xcassets in Resources */,
 				682026BB239F6DCC006EC991 /* PokemonSolid.ttf in Resources */,

@@ -43,6 +43,10 @@ class SignUpViewController: UIViewController,GIDSignInUIDelegate
                 btnstartGame.isHidden = true
     }
     
+   
+    
+    
+    
     override func viewDidLoad() {
         
     super.viewDidLoad()

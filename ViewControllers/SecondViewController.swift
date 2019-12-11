@@ -32,7 +32,7 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     private var gamePlaying = false
     private var planeDetected = false
 
-    
+  
     @IBOutlet var sceneView: ARSCNView!
     let sceneManager = ARSceneManger()
 
@@ -53,30 +53,33 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("ViewDidLoad")
+
         gamePlaying = true
-        setupGestureRecognizers()
-        setupScoreStats()
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           print("ViewWillAppear")
+           setUpSceneView()
+       }
     
     func setUpSceneView() {
           let configuration = ARWorldTrackingConfiguration()
           configuration.planeDetection = .horizontal
-          
           sceneView.session.run(configuration)
           
         sceneView.scene.physicsWorld.contactDelegate = self
         sceneManager.displayDegubInfo()
         sceneView.delegate = self
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        setupGestureRecognizers()
+setupScoreStats()
       }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUpSceneView()
-    }
+   
     
     
     
@@ -233,15 +236,16 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
                  DispatchQueue.main.async {
                     //Update the UI
                     self.labelLives.text = "Lives: \(self.lives)"
+                    let fadeOutAction = SCNAction.fadeOut(duration: 1)
+                    previousNode.runAction(fadeOutAction, completionHandler: {
+                        previousNode.removeFromParentNode()
+                    })
                             }
                 if(lives == 0)
                 {
                     score = 0
                     
-                    let fadeOutAction = SCNAction.fadeOut(duration: 1)
-                    previousNode.runAction(fadeOutAction, completionHandler: {
-                        previousNode.removeFromParentNode()
-                    })
+                    
                     //Stop the game
                     gamePlaying = false
                     //Remove All the nodes
@@ -281,32 +285,59 @@ class SecondViewController: UIViewController,SCNPhysicsContactDelegate,ARSession
            }
 }
        }
+//    private func createPaperNode() -> SCNNode {
+//
+//        // Create paper material
+//        let material = SCNMaterial()
+//        material.diffuse.contents = UIColor.white
+//        material.lightingModel = .physicallyBased
+//
+//        // Create paper geometry
+//        let geometry = SCNSphere(radius: 0.05)
+//        geometry.isGeodesic = true
+//        geometry.segmentCount = 10
+//        geometry.materials = [material]
+//
+//        // Create physics body
+//        let physicsShape = SCNPhysicsShape(geometry: geometry, options: nil)
+//        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: physicsShape)
+//        physicsBody.isAffectedByGravity = false
+//        physicsBody.categoryBitMask = CategoryBitMask.paper
+//        physicsBody.collisionBitMask = CategoryBitMask.all
+//        physicsBody.contactTestBitMask = CategoryBitMask.target
+//
+//        // Create and return the node
+//        let node = SCNNode(geometry: geometry)
+//        node.physicsBody = physicsBody
+//        return node
+//    }
+    
     private func createPaperNode() -> SCNNode {
-        
-        // Create paper material
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.white
-        material.lightingModel = .physicallyBased
-        
-        // Create paper geometry
-        let geometry = SCNSphere(radius: 0.05)
-        geometry.isGeodesic = true
-        geometry.segmentCount = 10
-        geometry.materials = [material]
-        
-        // Create physics body
-        let physicsShape = SCNPhysicsShape(geometry: geometry, options: nil)
-        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: physicsShape)
-        physicsBody.isAffectedByGravity = false
-        physicsBody.categoryBitMask = CategoryBitMask.paper
-        physicsBody.collisionBitMask = CategoryBitMask.all
-        physicsBody.contactTestBitMask = CategoryBitMask.target
-        
-        // Create and return the node
-        let node = SCNNode(geometry: geometry)
-        node.physicsBody = physicsBody
-        return node
-    }
+           
+           // Create paper material
+           let material = SCNMaterial()
+           material.diffuse.contents = UIColor.white
+           material.lightingModel = .physicallyBased
+           
+           // Create paper geometry
+           let geometry = SCNSphere(radius: 0.05)
+           geometry.isGeodesic = true
+           geometry.segmentCount = 5
+           geometry.materials = [material]
+           
+           // Create physics body
+           let physicsShape = SCNPhysicsShape(geometry: geometry, options: nil)
+           let physicsBody = SCNPhysicsBody(type: .dynamic, shape: physicsShape)
+           physicsBody.isAffectedByGravity = false
+           physicsBody.categoryBitMask = CategoryBitMask.paper
+           physicsBody.collisionBitMask = CategoryBitMask.all
+           physicsBody.contactTestBitMask = CategoryBitMask.target
+           
+           // Create and return the node
+           let node = SCNNode(geometry: geometry)
+           node.physicsBody = physicsBody
+           return node
+       }
     
     private func getPositionInWorld(from recognizer: UIGestureRecognizer) -> SCNVector3? {
            

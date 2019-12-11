@@ -31,7 +31,13 @@ class LeaderboardViewController : UIViewController,UITableViewDataSource,UITable
          return cell
     }
     
+    @IBAction func onClose(_ sender: Any) {
+  navigationController?.popViewController(animated: true)
 
+  dismiss(animated: true, completion: nil)
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
